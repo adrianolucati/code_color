@@ -1,16 +1,7 @@
-# code_color
+My first App - Curso de Flutter da Proz Educação
 
-A new Flutter project.
+Atividade do curso de Flutter da Proz Educação onde criei um app básico com spash screen, login page e home page.
+Implementei navegação de telas, validação de uruário/senha e status da sessão para verificar se o usuário já estava logado.
 
-## Getting Started
+Spash Screen
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
