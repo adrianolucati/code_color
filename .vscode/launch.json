@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "ola_mundo",
+            "name": "code_color",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "ola_mundo (profile mode)",
+            "name": "code_color (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "ola_mundo (release mode)",
+            "name": "code_color (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

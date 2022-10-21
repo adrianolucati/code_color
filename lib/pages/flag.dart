@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../components/custom_switcher.dart';
 import '../components/widget_bezier.dart'; //importando a classe BezierWidget()
 import '../components/widget_bezier2.dart';
 import '../components/widget_bezier3.dart';
-import 'home_page.dart';
 
 class FlagPage extends StatefulWidget {
   const FlagPage({super.key});

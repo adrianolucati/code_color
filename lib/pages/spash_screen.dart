@@ -28,7 +28,7 @@ class _SpashScreenState extends State<SpashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3),
+    Timer(const Duration(seconds: 2),
         () => Navigator.pushReplacementNamed(context, '/user'));
   }
 
@@ -38,25 +38,16 @@ class _SpashScreenState extends State<SpashScreen> {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: Container(
+        // child: Text('SOMAi FINANCE'),
         width: 300,
         height: 300,
-        // color: Colors.white,
         decoration: const BoxDecoration(
+            color: Colors.white,
             image: DecorationImage(
-                image: AssetImage(imageColors), fit: BoxFit.contain)),
+                image: AssetImage(imageColors), fit: BoxFit.cover)),
+        // image: AssetImage(imageColors), fit: BoxFit.contain)),
       ),
     );
     // child: FlutterLogo(size: MediaQuery.of(context).size.height));
   }
 }
-// class SecondScreen extends StatelessWidget {
-// @override
-// Widget build(BuildContext context) {
-// 	return Scaffold(
-// 	appBar: AppBar(title:const Text("GeeksForGeeks")),
-// 	body: const Center(
-// 		child:Text("Home page",textScaleFactor: 2,)
-// 	),
-// 	);
-// }
-// }

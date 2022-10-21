@@ -3,6 +3,7 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_material_color_picker/flutter_material_color_picker.dart';
 
 import '../app_controller.dart';
+import '../components/custom_switcher.dart';
 
 Color color = Colors.green;
 
@@ -107,20 +108,6 @@ class HomePageState extends State<HomePage> {
         },
         child: const Icon(Icons.add),
       ),
-    );
-  }
-}
-
-class CustomSwitcher extends StatelessWidget {
-  const CustomSwitcher({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-      value: AppController.instance.isDartTheme,
-      onChanged: (value) {
-        AppController.instance.changeTheme();
-      },
     );
   }
 }
