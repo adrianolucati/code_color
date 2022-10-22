@@ -1,6 +1,7 @@
+import 'package:code_color/pages/sign_up/confirm_password.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import '../home_page.dart';
 
 class LoginPagePassword extends StatefulWidget {
   static LoginPagePassword instance = LoginPagePassword();
@@ -37,34 +38,44 @@ class _LoginPagePasswordState extends State<LoginPagePassword> {
                 ),
               ),
               TextField(
+                textInputAction: TextInputAction.done,
+                autofocus: true,
                 obscureText: true,
-                enabled: enabled,
+                // enabled: enabled,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Senha',
                 ),
+                style: const TextStyle(
+                  fontSize: 16,
+                  letterSpacing: 2,
+                ),
                 onChanged: (value) {
                   pass = value;
-                  if (value.length > 6) {
+                  if (value.length > 0) {
                     setState(() {
                       enabled = false;
                     });
+                  } else {
+                    setState(
+                      () {
+                        enabled = true;
+                      },
+                    );
                   }
+                },
+                onEditingComplete: () {
+                  goToNextPage(context);
+                },
+                onSubmitted: (value) {
+                  print('chamar função de validação');
                 },
               ),
               Visibility(
                 visible: !enabled,
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    if (pass.isNotEmpty) {
-                      HomePage.instance.user = user;
-                      Navigator.of(context).pushReplacementNamed('/home');
-                      // Navigator.of(context).pushReplacement(
-                      //   MaterialPageRoute(
-                      //     builder: (context) => HomePage(),
-                      //   ),
-                      // );
-                    }
+                    goToNextPage(context);
                   },
                   icon: const Icon(Icons.navigate_next),
                   label: const Text('Entrar'),
@@ -76,11 +87,21 @@ class _LoginPagePasswordState extends State<LoginPagePassword> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).pushNamed('/flag'); // testar pushAndRemoveUntil
+          ConfirmPassword.instance.user = user;
+          ConfirmPassword.instance.pass = pass;
+          Navigator.of(context)
+              .pushReplacementNamed('/sign_up'); // testar pushAndRemoveUntil
         },
-        child: const Icon(Icons.question_mark),
         tooltip: 'Bodão de ajuda',
+        child: const Icon(Icons.question_mark),
       ),
     );
+  }
+
+  void goToNextPage(BuildContext context) {
+    if (pass.isNotEmpty) {
+      HomePage.instance.user = user;
+      Navigator.of(context).pushReplacementNamed('/home');
+    }
   }
 }

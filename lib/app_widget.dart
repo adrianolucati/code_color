@@ -1,31 +1,14 @@
+import 'package:code_color/pages/sign_up/confirm_password.dart';
 import 'package:flutter/material.dart';
 import 'app_controller.dart';
 import 'pages/flag.dart';
 import 'pages/home_page.dart';
-import 'pages/login_page_password.dart';
-import 'pages/login_page_user.dart';
+import 'pages/login/login_page_password.dart';
+import 'pages/login/login_page_user.dart';
 import 'pages/spash_screen.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Container(
-  //     child: Center(
-  //       child: Text(
-  //         title,
-  //         textDirection: TextDirection.ltr,
-  //         style: TextStyle(color: Colors.white, fontSize: 50),
-  //       ),
-  //     ),
-  //   );
-  // }
-
-  // int alpha = AppController.instance.color.alpha;
-  // int red = AppController.instance.color.red;
-  // int blue = AppController.instance.color.blue;
-  // int green = AppController.instance.color.green;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +30,7 @@ class AppWidget extends StatelessWidget {
             '/pass': (context) => LoginPagePassword(),
             '/home': (context) => HomePage(),
             '/flag': (context) => const FlagPage(),
+            '/sign_up': (context) => ConfirmPassword(),
           },
         );
       },

@@ -43,7 +43,8 @@ class HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Page'),
-        actions: const [
+        // ignore: prefer_const_literals_to_create_immutables
+        actions: [
           CustomSwitcher(),
         ],
       ),
